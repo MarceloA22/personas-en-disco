@@ -4,18 +4,18 @@ let cantidad: number = 270,
   indice: number;
 let personasDisco: number[] = new Array(cantidad);
 function aleatorio(mayorValor: number, menorValor: number): number {
-  return Math.floor(Math.random() * mayorValor || menorValor);
+  return Math.floor(Math.random() * (mayorValor - menorValor +1) + min);
 }
 for (indice = 0; indice <= cantidad; indice++) {
   personasDisco[indice] = aleatorio(40, 19);
   console.log(`${personasDisco[indice]}`);
 }
-console.log(`personas en total: ${indice - 1}`);
-for (indice = 0; indice <= cantidad; indice++) {
+console.log(`personas en total: ${cantidad}`);
+for (indice = 0; indice < cantidad; indice++) {
   if (personasDisco[indice] < 21) {
-    mayores++;
-  } else {
     menores++;
+  } else {
+    mayores++;
   }
 }
-console.log(`mayores: ${mayores - 1}, menores: ${menores}`);
+console.log(`mayores: ${mayores}, menores: ${menores}`);
